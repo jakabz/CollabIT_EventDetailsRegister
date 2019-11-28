@@ -1,7 +1,7 @@
 define([], function() {
   return {
     "listItemFieldLabel": "Event",
-    "listItemFieldLabel": "Date format",
+    "langItemFieldLabel": "Date format",
     "SignUp": "Sign up",
     "UnSubscribe": "Unsubscribe",
     "SaveEvent": "Save to calendar"

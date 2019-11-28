@@ -42,6 +42,10 @@ export default class EventRegistrationWebPart extends BaseClientSideWebPart<IEve
 
   public render(): void {
     
+    sp.setup({
+      spfxContext: this.context
+    });
+
     // GET EVENT LIST DATA
     sp.web.lists.getByTitle("Events").get().then((list:any[]) => {
       this.eventListId = list['Id'];
@@ -94,6 +98,14 @@ export default class EventRegistrationWebPart extends BaseClientSideWebPart<IEve
 
   protected get dataVersion(): Version {
     return Version.parse('1.0');
+  }
+
+  protected get disableReactivePropertyChanges(): boolean {
+    return true;
+  }
+
+  protected onAfterPropertyPaneChangesApplied(): void {
+    this.render();
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {

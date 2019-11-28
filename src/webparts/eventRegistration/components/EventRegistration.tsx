@@ -24,14 +24,11 @@ export default class EventRegistration extends React.Component<IEventRegistratio
     
   }
   public unsign(self):void {
-    var conf = confirm('Unsubscribe for event?');
-    if(conf){
-      ReactDom.render( <div className={ styles.eventRegistration }><Spinner className={styles.spinner} label="Please wait..." size={SpinnerSize.large} ariaLive="assertive" labelPosition="right" /></div>, self.domElement);
-      sp.web.lists.getByTitle('Event Registration').items.getById(self.eventRegistrationItem.Id).recycle().then(resp => {
-        self.render();
-      });
-    }
-    
+    ReactDom.render( <div className={ styles.eventRegistration }><Spinner className={styles.spinner} label="Please wait..." size={SpinnerSize.large} ariaLive="assertive" labelPosition="right" /></div>, self.domElement);
+    sp.web.lists.getByTitle('Event Registration').items.getById(self.eventRegistrationItem.Id).recycle().then(resp => {
+      self.render();
+    });
+    alert('Successful unsubscribe! Please, delete the event from your outlook calendar.');
   }
 
   public saveEvent(self):void {
