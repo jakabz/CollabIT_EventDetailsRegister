@@ -24,10 +24,14 @@ export default class EventRegistration extends React.Component<IEventRegistratio
     
   }
   public unsign(self):void {
-    ReactDom.render( <div className={ styles.eventRegistration }><Spinner className={styles.spinner} label="Please wait..." size={SpinnerSize.large} ariaLive="assertive" labelPosition="right" /></div>, self.domElement);
-    sp.web.lists.getByTitle('Event Registration').items.getById(self.eventRegistrationItem.Id).recycle().then(resp => {
-      self.render();
-    });
+    var conf = confirm('Unsubscribe for event?');
+    if(conf){
+      ReactDom.render( <div className={ styles.eventRegistration }><Spinner className={styles.spinner} label="Please wait..." size={SpinnerSize.large} ariaLive="assertive" labelPosition="right" /></div>, self.domElement);
+      sp.web.lists.getByTitle('Event Registration').items.getById(self.eventRegistrationItem.Id).recycle().then(resp => {
+        self.render();
+      });
+    }
+    
   }
 
   public saveEvent(self):void {
