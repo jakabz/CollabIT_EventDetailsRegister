@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "56fa3772-f85c-408f-9308-ccc25f29043b",
+  "alias": "EventRegistrationWebPart",
+  "componentType": "WebPart",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": ["SharePointWebPart"],
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+    "group": { "default": "Other" },
+    "title": { "default": "Event registration" },
+    "description": { "default": "Event registration description" },
+    "iconImageUrl": "./img/qs.png",
+    "properties": {
+      "title": "Event registration",
+      "listItem": "",
+      "eventId": 0,
+      "lang":"hu-HU"
+    }
+  }]
+}
