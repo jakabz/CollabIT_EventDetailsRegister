@@ -59,7 +59,7 @@ export default class EventRegistrationWebPart extends BaseClientSideWebPart<IEve
           }
         });
 
-        sp.web.lists.getByTitle("Event Registration").items.filter("EventID eq "+this.properties.eventId).get().then((regItem:any[]) => {
+        sp.web.lists.getByTitle("Event Registration").items.filter("EventID eq "+this.properties.eventId+" and PersonId eq "+this.context.pageContext.legacyPageContext.userId).get().then((regItem:any[]) => {
           this.eventRegistrationItem = regItem[0];
 
           const element: React.ReactElement<IEventRegistrationProps > = React.createElement(

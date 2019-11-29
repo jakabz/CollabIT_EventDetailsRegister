@@ -52,7 +52,7 @@ export default class EventRegistration extends React.Component<IEventRegistratio
       day = new Date(this.props.eventItem.EventDate).toLocaleString(this.props.lang,{day:'2-digit'});
       year = new Date(this.props.eventItem.EventDate).toLocaleString(this.props.lang,{year:'numeric'});
       start = new Date(this.props.eventItem.EventDate).toLocaleString(this.props.lang,{ year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
-      end = new Date(this.props.eventItem.EventDate).toLocaleString(this.props.lang,{ year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+      end = new Date(this.props.eventItem.EndDate).toLocaleString(this.props.lang,{ year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
       sing = { iconName: 'UserFollowed' };
       unsing = { iconName: 'UserRemove' };
       save = { iconName: 'CalendarReply' };
