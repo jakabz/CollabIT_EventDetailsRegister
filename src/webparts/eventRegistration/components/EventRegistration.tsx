@@ -28,7 +28,7 @@ export default class EventRegistration extends React.Component<IEventRegistratio
     sp.web.lists.getByTitle('Event Registration').items.getById(self.eventRegistrationItem.Id).recycle().then(resp => {
       self.render();
     });
-    alert('Successful unsubscribe! Please, delete the event from your outlook calendar.');
+    alert('Successful unsubscription! Please, delete the event from your outlook calendar.');
   }
 
   public saveEvent(self):void {
